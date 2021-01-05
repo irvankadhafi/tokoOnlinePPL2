@@ -1,0 +1,2 @@
+// alert('Irvan')
+import 'alpinejs'
