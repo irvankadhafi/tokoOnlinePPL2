@@ -3,6 +3,7 @@ namespace App\Controllers\Shop;
 use App\Controllers\BaseController;
 use App\Models\ProductModel;
 
+
 class ProductController extends BaseController
 {
     public function __construct()
@@ -34,6 +35,6 @@ class ProductController extends BaseController
 
         $this->product->create($data);
         return redirect()->to('/');
-	}
+  }
 
 }

@@ -101,7 +101,18 @@
                                 </tr>
                                 <tr class="font-bold text-red-500">
                                     <td colspan="4" class="text-right px-4 py-3">Total Berat</td>
-                                    <td class="text-right px-4 py-3"><?php echo number_format(($total_weight) / 1000, 2);  ?>kg</td>
+                                    <td class="text-right px-4 py-3"><?php echo number_format(($total_weight) / 1000, 2);  ?>kg (<?php echo number_format(($total_weight_pembulatan), 2);  ?>kg)</td>
+                                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-56 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500 hidden" id="inline-full-name" name="total_berat" type="text" value="<?php echo $total_weight_pembulatan; ?>" readonly>
+                                </tr>
+                                <tr class="font-bold text-red-500">
+                                    <td colspan="4" class="text-right px-4 py-3">Total Biaya Ongkir</td>
+                                    <td class="text-right px-4 py-3">Rp. <?php echo number_format($total_ongkir, 0, 0, '.'); ?> (/kg Rp. <?php echo number_format($biaya_ongkir, 0, 0, '.'); ?>)</td>
+                                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-56 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500 hidden" id="inline-full-name" name="total_ongkir" type="text" value="<?php echo $total_ongkir; ?>" readonly>
+                                </tr>
+                                <tr class="font-bold text-red-500">
+                                    <td colspan="4" class="text-right px-4 py-3">Total Semua</td>
+                                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-56 py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500 hidden" id="inline-full-name" name="total_semua" type="text" value="<?php echo $total_semua; ?>" readonly>
+                                    <td class="text-right px-4 py-3">Rp. <?php echo number_format($total_semua, 0, 0, '.'); ?></td>
                                 </tr>
                                 </tbody>
                             </table>

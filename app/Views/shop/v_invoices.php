@@ -37,7 +37,7 @@
                             <label class="w-32 text-gray-800 block font-bold text-sm uppercase tracking-wide">Alamat</label>
                             <span class="mr-4 inline-block hidden md:block">:</span>
                             <div class="flex-1">
-                                <span class="text-gray-700 leading-tight"><?php echo $alamat.', '.$kecamatan.', '.$kota ?></span>
+                                <span class="text-gray-700 leading-tight"><?php echo $alamat.', '.$namaKecamatan.', '.$kota ?></span>
                             </div>
                         </div>
 
@@ -97,13 +97,15 @@
                                     </tr>
                                 <?php } ?>
                                 <tr class="font-bold text-red-500">
-                                    <td colspan="4" class="text-right px-4 py-3">Jumlah</td>
-                                    <td class="text-right px-4 py-3">Rp. <?php echo number_format($total, 0, 0, '.'); ?></td>
-                                </tr>
-                                <tr class="font-bold text-red-500">
                                     <td colspan="4" class="text-right px-4 py-3">Total Berat</td>
-                                    <td class="text-right px-4 py-3"><?php echo number_format(($total_weight) / 1000, 2);  ?>kg</td>
+                                    <td class="text-right px-4 py-3"><?php echo number_format(($total_weight), 2);  ?>kg</td>
                                 </tr>
+
+                                <tr class="font-bold text-red-500">
+                                    <td colspan="4" class="text-right px-4 py-3">Jumlah Pembayaran</td>
+                                    <td class="text-right px-4 py-3">Rp. <?php echo number_format($total_harga, 0, 0, '.'); ?></td>
+                                </tr>
+
                                 </tbody>
                             </table>
                             <?php echo form_close(); ?>

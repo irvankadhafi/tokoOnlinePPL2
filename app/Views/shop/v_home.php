@@ -30,7 +30,8 @@
             <span class="font-bold text-gray-800 text-lg"><?php echo $row['name']; ?></span>
             <div class="flex items-center justify-between">
               <div class="text-sm text-gray-600 font-light">
-                  Stock : <?php echo $row['stock']; ?>
+                  <div>Stock : <?php echo $row['stock']; ?></div>
+                  <div>Berat : <?php echo $row['weight']; ?> gr</div>
                 </div>
               <div class="text-md text-red-600 font-bold">
                 Rp. <?php echo number_format($row['price'], 0, 0, '.'); ?>

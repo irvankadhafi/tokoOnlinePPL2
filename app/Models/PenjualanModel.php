@@ -8,6 +8,14 @@ class PenjualanModel extends Model{
     protected $table = "penjualan";
     protected $primaryKey = "id";
 
+    public function getDataPenjualan()
+    {
+        $query = $this->db->query("SELECT * FROM ".$this->table);
+        $results = $query->getResult('array');
+
+        return $results;
+    }
+
     //function mendapatkan id terakhir
     public function get_idmax()
     {
@@ -44,12 +52,13 @@ class PenjualanModel extends Model{
     {
         $id = $data['idtrx'];
         $total = $data['total'];
+        $totalHargaOngkir = $data['total_harga_ongkir'];
         $namaPembeli = $data['penerima'];
         $alamatPembeli = $data['alamat'];
         $kecamatanPembeli = $data['kecamatan'];
         $kotaPembeli = $data['kota'];
         $hpPembeli = $data['nohp'];
         $status = 0;
-        $this->db->query("INSERT INTO penjualan(id, total_pembayaran, status_pembayaran, nama_pembeli, alamat_pembeli, kecamatan_pembeli, kota_tujuan, telp_pembeli) VALUES ('$id','$total','$status','$namaPembeli','$alamatPembeli','$kecamatanPembeli','$kotaPembeli','$hpPembeli')");
+        $this->db->query("INSERT INTO penjualan(id, total_harga_barang,total_harga_ongkir, status_pembayaran, nama_pembeli, alamat_pembeli, 	id_kecamatan_pembeli, kota_tujuan, telp_pembeli) VALUES ('$id','$total','$totalHargaOngkir','$status','$namaPembeli','$alamatPembeli','$kecamatanPembeli','$kotaPembeli','$hpPembeli')");
     }
 }

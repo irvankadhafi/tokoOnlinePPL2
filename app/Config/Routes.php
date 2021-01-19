@@ -44,6 +44,14 @@ $routes->get('/admin', 'Admin\DashboardController::index', ['as' => 'admin_home'
 $routes->get('/admin/product', 'Admin\DashboardController::listProduct', ['as' => 'admin_product_list']);
 $routes->get('/admin/product/create', 'Admin\DashboardController::createProduct', ['as' => 'admin_product_create']);
 $routes->post('/admin/product', 'Shop\ProductController::store', ['as' => 'admin_product_store']);
+$routes->get('/admin/penjualan', 'Admin\DashboardController::listPenjualan', ['as' => 'admin_penjualan_list']);
+
+
+
+
+$routes->get('/admin/penjualan/excel', 'Shop\PenjualanController::exportXLSPenjualan', ['as' => 'admin_penjualan_xls']);
+$routes->get('/admin/penjualan/pdf', 'Shop\PenjualanController::exportPDFPenjualan', ['as' => 'admin_penjualan_pdf']);
+
 
 /**
  * --------------------------------------------------------------------

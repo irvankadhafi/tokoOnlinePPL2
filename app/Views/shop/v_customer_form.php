@@ -15,7 +15,16 @@
             <textarea class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="cus_address" name="cus_address" rows="2" type="text" required="" placeholder="Jl. ..." aria-label="Address"></textarea>        </div>
         <div class="inline-block mt-2 w-1/2 pr-1">
             <label class="hidden block text-sm text-gray-600" for="cus_email">Kecamatan</label>
-            <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_kecamatan" name="cus_kecamatan" type="text" required="" placeholder="Kecamatan" aria-label="Kecamatan">
+            <select name="cus_kecamatan" class="form-select block w-full bg-gray-200">
+                <?php
+                    foreach($ongkir as $key => $row) {
+                ?>
+                <option value="<?php echo $row['id']; ?>"><?php echo $row['kecamatan_tujuan']; ?></option>
+                <?php
+                    }
+                ?>
+            </select>
+<!--            <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_kecamatan" name="cus_kecamatan" type="text" required="" placeholder="Kecamatan" aria-label="Kecamatan">-->
         </div>
         <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
             <label class="hidden block text-sm text-gray-600" for="cus_email">Kota</label>

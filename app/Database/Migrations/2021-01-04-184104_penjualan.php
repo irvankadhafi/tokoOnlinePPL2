@@ -11,6 +11,25 @@ class Penjualan extends Migration
                 'type'  => 'VARCHAR',
                 'constraint' => 8
             ],
+            'nama_pembeli' => [
+                'type'  => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'alamat_pembeli' => [
+                'type'  => 'TEXT'
+            ],
+            'kecamatan_pembeli' => [
+                'type'  => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'kota_tujuan' => [
+                'type'  => 'VARCHAR',
+                'constraint' => 255
+            ],
+            'telp_pembeli' => [
+                'type'  => 'VARCHAR',
+                'constraint' => 20
+            ],
             'total_pembayaran' => [
                 'type'  => 'FLOAT',
                 'constraint' => 20
@@ -23,6 +42,7 @@ class Penjualan extends Migration
             ],
         ]);
         $this->forge->addKey('id',true);
+//        $this->forge->addForeignKey('kecamatan_pembeli','ongkir','kecamatan_tujuan');
         $this->forge->createTable('penjualan');
     }
 
